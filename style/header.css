@@ -1,7 +1,12 @@
 header {
     font-size: 8vw;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+body{
+    background-image: url(/images/rick.jpg);
+    background-repeat: repeat;
 }

@@ -5,34 +5,34 @@
 
 <style>@import url("style/header.css");</style>
 
-<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
-
-<script src="firebase.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyADl-M9rosKLQhgYqPX73OChXnkQX3Z_80",
-    authDomain: "esperproj.firebaseapp.com",
-    databaseURL: "https://esperproj.firebaseio.com",
-    projectId: "esperproj",
-    storageBucket: "esperproj.appspot.com",
-    messagingSenderId: "317958487855",
-    appId: "1:317958487855:web:3d018d8d2fca24a3ab6bda",
-    measurementId: "G-49116J0KB3"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-
-</script>
 </head>
 
 <body>
+    <header>Main page of Esper</header>
 
-<header>Main page of Esper</header>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+<script src="/__/firebase/7.9.2/firebase-auth.js"></script>
+<script src="/__/firebase/7.9.2/firebase-firestore.js"></script>
+<script src="firebase.js"></script>
+<script src="/__/firebase/init.js"></script>
 
+<script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyADl-M9rosKLQhgYqPX73OChXnkQX3Z_80",
+            authDomain: "esperproj.firebaseapp.com",
+            databaseURL: "https://esperproj.firebaseio.com",
+            projectId: "esperproj",
+            storageBucket: "esperproj.appspot.com",
+            messagingSenderId: "317958487855",
+            appId: "1:317958487855:web:3d018d8d2fca24a3ab6bda",
+            measurementId: "G-49116J0KB3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+</script>
 </body>
 </html>
