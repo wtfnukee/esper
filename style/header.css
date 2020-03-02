@@ -1,5 +1,7 @@
 header {
-    font-size: large;
+    font-size: 8vw;
+    display: flex;
+    align-items: center;
     text-align: center;
     justify-content: center;
 }
