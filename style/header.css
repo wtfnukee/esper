@@ -1,0 +1,30 @@
+body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    height: 100vh;
+    background-color: MediumSeaGreen;
+    background-image: url(/images/rick.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    text-align: center;
+}
+
+h1 {
+    font-size: 140px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-top: 100px;
+}
