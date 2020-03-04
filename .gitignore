@@ -41,3 +41,4 @@ luac.out
 
 # Directories
 /.idea
+/node_modules

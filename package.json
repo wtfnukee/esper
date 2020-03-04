@@ -1,0 +1,11 @@
+{
+  "name": "esper",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "firebase": "^7.9.3",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0"
+  }
+}
