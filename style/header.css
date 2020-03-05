@@ -14,7 +14,7 @@ body {
 
 .header {
     height: 100vh;
-    background-color: DarkSlateBlue;
+    background-color: BlueViolet;
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -61,7 +61,7 @@ body {
 }
 
 .card-text{
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .footer{
