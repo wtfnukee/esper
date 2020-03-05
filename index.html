@@ -5,6 +5,7 @@
 
 <style>@import url("style/header.css");</style>
 <link rel="icon" href="favicon.ico" type="image/ico">
+<script src="/script/external.js"></script>
 </head>
 
 <body class="body">
@@ -17,18 +18,21 @@
 
 <section class="content">
 <card class="card">
-    <button class="big-button card-title">Sign in</button>
+    <button class="big-button card-title" onclick="toggleSignIn()">Sign in</button>
     <h2 class="card-text">Register on site</h2>
 </card>
 
 <card class="card no-right-margin">
-    <button class="big-button card-title">Log in</button>
+    <button class="big-button card-title" onclick="handleSignUp();">Log in</button>
     <h2 class="card-text">Log into an existing account</h2>
 </card>
 </section>
 
 <footer class="footer">
-    <h4 class="footer-author">https://github.com/wtfnukee/esper<br>https://vk.com/verviv</h4>
+    <h4 class="footer-author">
+        <a href="https://github.com/wtfnukee/esper">https://github.com/wtfnukee/esper</a>
+        <br><a href="https://vk.com/verviv">https://vk.com/verviv</a>
+    </h4>
 </footer>
 
 
@@ -39,6 +43,7 @@
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+<script src="/https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
 <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
