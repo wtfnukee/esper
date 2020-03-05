@@ -8,7 +8,7 @@ body, h1, h2, h3, h4, p, a {
     box-sizing: border-box;
 }
 
-.body {
+body {
     font-family: 'Inter', sans-serif;
 }
 
@@ -37,8 +37,31 @@ body, h1, h2, h3, h4, p, a {
 
 .content{
     width: 790px;
-    margin: 0 auto 0;
+    margin: 100px auto 50px;
     font-size:0;
+}
+
+.card {
+    width: 350px;
+    margin-right: 90px;
+    margin-bottom: 60px;
+    padding: 45px 45px 70px 45px;
+    display: inline-block;
+    box-shadow: 4px 4px 5px crimson;
+}
+
+.no-right-margin{
+    margin-right:0;
+}
+
+.card-title{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.card-text{
+    font-size: 16px;
 }
 
 .footer{
@@ -52,6 +75,3 @@ body, h1, h2, h3, h4, p, a {
     color: white;
     font-size:24px;
 }
-
-
-
