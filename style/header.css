@@ -8,7 +8,7 @@ body, h1, h2, h3, h4, p, a {
     box-sizing: border-box;
 }
 
-body {
+.body {
     font-family: 'Inter', sans-serif;
 }
 
