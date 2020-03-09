@@ -3,12 +3,34 @@
 <head>
     <title>Sing Up</title>
     <style>@import url("style/style.css");</style>
+    <style>@import url("style/auth.css");</style>
+    <style>@import url("style/medium-button.css");</style>
     <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
-
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+<script src="/https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyADl-M9rosKLQhgYqPX73OChXnkQX3Z_80",
+        authDomain: "esperproj.firebaseapp.com",
+        databaseURL: "https://esperproj.firebaseio.com",
+        projectId: "esperproj",
+        storageBucket: "esperproj.appspot.com",
+        messagingSenderId: "317958487855",
+        appId: "1:317958487855:web:3d018d8d2fca24a3ab6bda",
+        measurementId: "G-49116J0KB3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
 <div class="auth">
     <h1 class="auth-title">Registration</h1>
     <h2 class="auth-text">Enter an email and password below to sign up</h2>
     <label for="email"><input type="text" id="email" name="email" placeholder="Email" size="30" required></label>
     <label for="password"><input type="text" id="password" name="password" placeholder="Password" size="30" required></label>
+    <button class="medium-button auth-title" onclick="handleSignUp()">Check</button>
+
 </div>

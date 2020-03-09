@@ -1,0 +1,25 @@
+.auth {
+    width: 500px;
+    margin: auto;
+    padding: 45px 45px 70px 45px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 5px 5px 5px crimson;
+}
+.auth-title{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.auth-text{
+    font-size: 30px;
+    display: inline-block;
+}
+
+.input-field{
+    display:inline;
+    width:auto;
+}

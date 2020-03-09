@@ -1,0 +1,16 @@
+.footer{
+    height: 300px;
+    display: flex;
+    background-color: black;
+}
+
+.footer-author{
+    margin: auto;
+    color: white;
+    font-size:24px;
+}
+
+.footer-text{
+    color: white;
+    font-size: 33px;
+}

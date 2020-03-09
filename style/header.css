@@ -1,0 +1,15 @@
+.header {
+    height: 100vh;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 140px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: auto;
+}
