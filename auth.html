@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="html">
+<head>
+    <title>Sing Up</title>
+    <style>@import url("style/style.css");</style>
+    <style>@import url("style/auth.css");</style>
+    <style>@import url("style/medium-button.css");</style>
+    <link rel="icon" href="favicon.ico" type="image/ico">
+</head>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+<script src="/https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+<script src="script/auth.js"></script>
+
+<card class="auth">
+    <h1 class="auth-title">Auth</h1>
+    <h2 class="auth-text">Enter an email and password below to sign up or log in</h2>
+        <input id="txtEmail" type="email" name="email" placeholder="Email" required class="input-field">
+
+        <input id="txtPassword" type="password" name="password" placeholder="Password" required class="input-field">
+
+        <button class="medium-button auth-title" id="btnSignUp">Sign Up</button>
+
+        <button class="medium-button auth-title no-right-margin" id="btnLogin">Log In</button>
+</card>

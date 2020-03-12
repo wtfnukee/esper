@@ -1,6 +1,7 @@
 .auth {
     width: 500px;
-    margin: auto;
+    margin-right: 90px;
+    margin-bottom: 60px;
     padding: 45px 45px 70px 45px;
     position: absolute;
     top: 50%;
@@ -19,10 +20,14 @@
     display: inline-block;
 }
 
+.no-right-margin{
+    margin-right:0;
+}
+
 .input-field{
     display:inline;
     width: auto;
     height: auto;
     padding: 10px;
-    margin: 15px;
+    margin: 10px 40px 20px;
 }
