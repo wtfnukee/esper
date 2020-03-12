@@ -21,5 +21,8 @@
 
 .input-field{
     display:inline;
-    width:auto;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 15px;
 }

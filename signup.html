@@ -10,6 +10,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
 <script src="/https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+<script src="/script/auth.js"></script>
 <script>
     // Your web app's Firebase configuration
     const firebaseConfig = {
@@ -29,8 +30,8 @@
 <div class="auth">
     <h1 class="auth-title">Registration</h1>
     <h2 class="auth-text">Enter an email and password below to sign up</h2>
-    <label for="email"><input type="text" id="email" name="email" placeholder="Email" size="30" required></label>
-    <label for="password"><input type="text" id="password" name="password" placeholder="Password" size="30" required></label>
-    <button class="medium-button auth-title" onclick="handleSignUp()">Check</button>
+    <label for="email"><input type="email" id="email" name="email" placeholder="Email" required class="input-field"></label>
+    <label for="password"><input type="password" id="password" name="password" placeholder="Password" required class="input-field"></label>
+    <button class="medium-button auth-title" id="register">Register</button>
 
 </div>
