@@ -18,8 +18,9 @@ firebase.analytics();
 
 const txtEmail = document.getElementById("txtEmail");
 const txtPassword = document.getElementById("txtPassword");
-const btnSignUp = document.getElementById("btnSignUp");
 const btnLogin = document.getElementById("btnLogin");
+const btnSignUp = document.getElementById("btnSignUp");
+const btnLogout = document.getElementById("btnLogout");
 
 btnLogin.addEventListener('click', e => {
     const email = txtEmail.value;
@@ -36,7 +37,12 @@ btnSignUp.addEventListener('click', e => {
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
+    let sve = auth.currentUser.sendEmailVerification();
+    sve.catch(e => console.log(e.message));
+});
 
+btnLogout.auth().addEventListener('click', e=>{
+    firebase.auth().signOut();
 });
 
 firebase.auth().onAuthStateChanged(firebaseUser =>{
