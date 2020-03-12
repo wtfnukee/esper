@@ -1,3 +1,4 @@
+"use strict"
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyADl-M9rosKLQhgYqPX73OChXnkQX3Z_80",
