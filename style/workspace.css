@@ -1,0 +1,12 @@
+.workspace-main{
+    height: 100vh;
+    text-align: center;
+}
+
+.workspace-title {
+    font-size: 140px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: auto;
+}

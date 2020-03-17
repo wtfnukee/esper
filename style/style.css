@@ -8,6 +8,7 @@ body, h1, h2, h3, h4, p, a {
     font-size: 100%;
     font-family: 'Inter', sans-serif;
     font-weight: normal;
+    color: black;
 }
 
 *{
