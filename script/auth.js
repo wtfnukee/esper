@@ -39,10 +39,6 @@ btnLogin.addEventListener('click', e => {
 
 });
 
-btnLogout.auth().addEventListener('click', e=>{
-    firebase.auth().signOut();
-});
-
 
 btnSignUp.addEventListener('click', e => {
     const email = txtEmail.value;
@@ -50,15 +46,9 @@ btnSignUp.addEventListener('click', e => {
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
-    let sve = auth.currentUser.sendEmailVerification();
-    sve.catch(e => console.log(e.message));
+    alert("You registered new account!");
 });
-document.addEventListener("DOMContentLoaded", () => {
-    user.providerData.forEach(function (profile) {
-        console.log("Sign-in provider: " + profile.providerId);
-        console.log("  Provider-specific UID: " + profile.uid);
-        console.log("  Name: " + profile.displayName);
-        console.log("  Email: " + profile.email);
-        console.log("  Photo URL: " + profile.photoURL);
-    });
+
+btnLogout.auth().addEventListener('click', e=>{
+    firebase.auth().signOut();
 });
