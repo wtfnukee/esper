@@ -4,13 +4,14 @@
     <title>Esper Project</title>
 
     <style>@import url("style/style.css");</style>
-    <style>@import url("style/header.css");</style>
     <style>@import url("style/workspace.css");</style>
+    <style>@import url("style/medium-button.css");</style>
+    <style>@import url("style/auth.css");</style>
     <style>@import url("style/footer.css");</style>
     <link rel="icon" href="favicon.ico" type="image/ico">
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
-    <script src="/https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
 </head>
 
 <body class="body">
@@ -18,6 +19,7 @@
 <section id="workspace" class="workspace-main">
     <h1 class="workspace-title">Database Example</h1>
     <pre id="dbView"></pre>
+    <button class="medium-button auth-title" id="btnLogout" type="submit"><a href="index.html">Logout</a></button>
 </section>
 
 <footer class="footer">
@@ -28,6 +30,16 @@
     </h4>
 </footer>
 
-<script src="/script/auth.js"></script>
+<script src="script/auth.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    user.providerData.forEach(function (profile) {
+        console.log("Sign-in provider: " + profile.providerId);
+        console.log("  Provider-specific UID: " + profile.uid);
+        console.log("  Name: " + profile.displayName);
+        console.log("  Email: " + profile.email);
+        console.log("  Photo URL: " + profile.photoURL);
+    });
+});</script>
 </body>
 </html>

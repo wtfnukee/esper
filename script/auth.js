@@ -15,7 +15,6 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 
-
 const txtEmail = document.getElementById("txtEmail");
 const txtPassword = document.getElementById("txtPassword");
 const btnLogin = document.getElementById("btnLogin");
@@ -30,15 +29,20 @@ btnLogin.addEventListener('click', e => {
     const auth = firebase.auth();
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
-    firebase.auth().onAuthStateChanged(firebaseUser =>{
-        if (firebaseUser) {
-            window.location.href = "workspace.html/"; //TODO заменить на вход в workspace
-        } else {
-            console.log("not logged in");
-        }
-    });
+    const user = firebase.auth().currentUser;
+    if (user) {
+        // User is signed in.
+        window.location.href = "workspace.html";
+    } else {
+        // No user is signed in.
+    }
 
 });
+
+btnLogout.auth().addEventListener('click', e=>{
+    firebase.auth().signOut();
+});
+
 
 btnSignUp.addEventListener('click', e => {
     const email = txtEmail.value;
@@ -46,11 +50,15 @@ btnSignUp.addEventListener('click', e => {
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
-    let sve = auth.currentUser.sendEmailVerification(email, pass);
+    let sve = auth.currentUser.sendEmailVerification();
     sve.catch(e => console.log(e.message));
 });
-
-btnLogout.auth().addEventListener('click', e=>{
-    firebase.auth().signOut();
+document.addEventListener("DOMContentLoaded", () => {
+    user.providerData.forEach(function (profile) {
+        console.log("Sign-in provider: " + profile.providerId);
+        console.log("  Provider-specific UID: " + profile.uid);
+        console.log("  Name: " + profile.displayName);
+        console.log("  Email: " + profile.email);
+        console.log("  Photo URL: " + profile.photoURL);
+    });
 });
-
