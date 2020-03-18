@@ -91,7 +91,6 @@ function handleSignUp() {
         // [END_EXCLUDE]
     });
     // [END createwithemail]
-    alert("You registered new account!");
 }
 
 function toggleSignOut(){
