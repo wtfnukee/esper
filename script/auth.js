@@ -21,34 +21,83 @@ const btnLogin = document.getElementById("btnLogin");
 const btnSignUp = document.getElementById("btnSignUp");
 const btnLogout = document.getElementById("btnLogout");
 
-const dbView= document.getElementById("dbView");
-
-btnLogin.addEventListener('click', e => {
-    const email = txtEmail.value;
-    const pass = txtPassword.value;
-    const auth = firebase.auth();
-    const promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
-    const user = firebase.auth().currentUser;
-    if (user) {
-        // User is signed in.
-        window.location.href = "workspace.html";
+function toggleSignIn() {
+    if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
     } else {
-        // No user is signed in.
+        const email = txtEmail.value;
+        const pass = txtPassword.value;
+        if (email.length < 4) {
+            alert('Please enter an email address.');
+            return;
+        }
+        if (pass.length < 4) {
+            alert('Please enter a password.');
+            return;
+        }
+        // Sign in with email and pass.
+        // [START authwithemail]
+        firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
+            // Handle Errors here.
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            // [START_EXCLUDE]
+            if (errorCode === 'auth/wrong-password') {
+                alert('Wrong password.');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+            btnLogin.disabled = false;
+            // [END_EXCLUDE]
+        });
+        // [END authwithemail]
+    }
+    btnLogin.disabled = true;
+    if (firebase.auth().currentUser) {
+        window.location.href = "workspace.html";
+        } else {
+        alert("This account does not exist")
     }
 
-});
+}
 
-
-btnSignUp.addEventListener('click', e => {
+function handleSignUp() {
     const email = txtEmail.value;
     const pass = txtPassword.value;
-    const auth = firebase.auth();
-    const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
+    if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+    }
+    if (pass.length < 4) {
+        alert('Please enter a password.');
+        return;
+    }
+    // Create user with email and pass.
+    // [START createwithemail]
+    firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
+        // Handle Errors here.
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/weak-password') {
+            alert('The password is too weak.');
+        } else {
+            alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+    });
+    // [END createwithemail]
     alert("You registered new account!");
-});
+}
 
-btnLogout.auth().addEventListener('click', e=>{
+function toggleSignOut(){
     firebase.auth().signOut();
-});
+}
+
+btnLogin.addEventListener('click', toggleSignIn, false);
+btnSignUp.addEventListener('click', handleSignUp, false);
+btnLogout.addEventListener('click', toggleSignOut, false);
