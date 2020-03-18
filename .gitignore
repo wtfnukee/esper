@@ -41,7 +41,6 @@ luac.out
 
 # Directories
 /.git
-/.circleci
 /.idea
 /node_modules
 
