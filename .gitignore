@@ -40,5 +40,6 @@ luac.out
 *.hex
 
 # Directories
+/.git
 /.idea
 /node_modules
