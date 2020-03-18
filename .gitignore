@@ -41,5 +41,10 @@ luac.out
 
 # Directories
 /.git
+/.circleci
 /.idea
 /node_modules
+
+
+package-lock.json
+.firebaserc
