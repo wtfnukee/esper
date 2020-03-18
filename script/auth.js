@@ -1,5 +1,5 @@
 "use strict";
-// Your web app's Firebase configuration
+// Esper's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyADl-M9rosKLQhgYqPX73OChXnkQX3Z_80",
     authDomain: "esperproj.firebaseapp.com",
@@ -14,13 +14,14 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-
+// Get elements
 const txtEmail = document.getElementById("txtEmail");
 const txtPassword = document.getElementById("txtPassword");
 const btnLogin = document.getElementById("btnLogin");
 const btnSignUp = document.getElementById("btnSignUp");
 const btnLogout = document.getElementById("btnLogout");
 
+//Add auth functions
 function toggleSignIn() {
     if (firebase.auth().currentUser) {
         // [START signout]
@@ -97,6 +98,7 @@ function toggleSignOut(){
     firebase.auth().signOut();
 }
 
+//Add button listeners
 btnLogin.addEventListener('click', toggleSignIn, false);
 btnSignUp.addEventListener('click', handleSignUp, false);
 btnLogout.addEventListener('click', toggleSignOut, false);
