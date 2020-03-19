@@ -12,13 +12,19 @@
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-database.js"></script>
 </head>
 
 <body class="body">
 
 <section id="workspace" class="workspace-main">
     <h1 class="workspace-title">Database Example</h1>
+    <input id="inputUsername">
+    <input id="inputText">
+    <button id="pushData">Push</button>
+    <br>
     <pre id="dbView"></pre>
+    <br>
     <button class="medium-button auth-title" id="btnLogout" type="submit"><a href="index.html">Logout</a></button>
 </section>
 
@@ -31,5 +37,7 @@
 </footer>
 
 <script src="script/auth.js"></script>
+<script src="script/firestore.js"></script>
+<script src="script/db.js"></script>
 </body>
 </html>
