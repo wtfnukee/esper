@@ -44,6 +44,7 @@ luac.out
 /.idea
 /node_modules
 
+*.log
 
 package-lock.json
 .firebaserc
