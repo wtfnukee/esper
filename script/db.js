@@ -4,12 +4,17 @@
 const pushData = document.getElementById("pushData");
 const inputUsername = document.getElementById("username");
 const inputText = document.getElementById("text");
-const dbView = document.getElementById('dbView');
 
-//Create references
-const dbRefObject = firebase.database().ref().child('dbView');
 
-//Sync object changes
-dbRefObject.on('value', snap => {
-    dbView.innerText = JSON.stringify(snap.val(), null, 3);
-});
+let userId = firebase.auth().currentUser.uid;
+
+function Sandbox() {
+    firebase.database().ref('UserSandbox/' + userId).set({
+        "text": inputText,
+        "author": inputUsername,
+        "uid": userId
+    }).then(r => console.log(inputText));
+}
+
+//Add button listeners
+pushData.addEventListener('click', Sandbox);
