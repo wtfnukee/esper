@@ -1,8 +1,8 @@
 # Site of Esper Project
 ## What is New
-Actually, nothing new
-## About this project
 Here it’s more fun, the site is almost ready
+## About this project
+Nothing is real but pain now
 ## Link
 https://wtfnukee.github.io/esper/
 ## License
