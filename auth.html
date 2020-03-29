@@ -14,10 +14,12 @@
 <card class="auth">
     <h1 class="auth-title">Auth</h1>
     <h2 class="auth-text">Enter an email and password below to sign up or log in</h2>
-        <input id="txtEmail" type="email" name="email" placeholder="Email" required class="input-field">
-
-        <input id="txtPassword" type="password" name="password" placeholder="Password" required class="input-field">
-
+        <label for="txtEmail">
+            <input id="txtEmail" type="email" name="email" placeholder="Email" required class="input-field">
+        </label>
+        <label for="txtPassword">
+            <input id="txtPassword" type="password" name="password" placeholder="Password" required class="input-field">
+        </label>
         <button class="medium-button auth-title" id="btnLogin" type="submit">Log In</button>
 
         <button class="medium-button auth-title" id="btnSignUp" type="submit">Sign Up</button>

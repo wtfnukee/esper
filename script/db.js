@@ -1,20 +1,30 @@
 'use strict';
 
 // Get elements
-const pushData = document.getElementById("pushData");
-const inputUsername = document.getElementById("username");
-const inputText = document.getElementById("text");
+const btnPushData = document.getElementById("pushData");
+const inputUsername = document.getElementById("inputUsername");
+const inputText = document.getElementById("inputText");
 
+const userId = firebase.auth().currentUser.uid;
 
-let userId = firebase.auth().currentUser.uid;
+function pushData() {
+    firebase.firestore().collection("/UserSandbox").add({
+        username: inputUsername.value,
+        text: inputText.value,
+        uid: userId.value,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+}
 
-function Sandbox() {
-    firebase.database().ref('UserSandbox/' + userId).set({
-        "text": inputText,
-        "author": inputUsername,
-        "uid": userId
-    }).then(r => console.log(inputText));
+function readData() {
+
 }
 
 //Add button listeners
-pushData.addEventListener('click', Sandbox);
+btnPushData.addEventListener('click', pushData);
