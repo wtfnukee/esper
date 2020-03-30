@@ -9,7 +9,7 @@
     "rules": "database.rules.json"
   },
   "firestore": {
-    "rules": "firestore.rules.json",
-    "indexes": "firestore.indexes.json"
+    "rules": "firestore.rules",
+    "indexes": "y"
   }
 }

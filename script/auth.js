@@ -101,4 +101,3 @@ function toggleSignOut(){
 //Add button listeners
 btnLogin.addEventListener('click', toggleSignIn, false);
 btnSignUp.addEventListener('click', handleSignUp, false);
-
