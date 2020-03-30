@@ -2,13 +2,14 @@
 <html lang="html">
 <head>
     <title>Esper Project</title>
+    <link rel="icon" href="images/favicon.ico" type="image/ico">
 
     <style>@import url("style/style.css");</style>
     <style>@import url("style/workspace.css");</style>
     <style>@import url("style/medium-button.css");</style>
     <style>@import url("style/auth.css");</style>
     <style>@import url("style/footer.css");</style>
-    <link rel="icon" href="images/favicon.ico" type="image/ico">
+
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
@@ -19,8 +20,8 @@
 
 <section id="workspace" class="workspace-main">
     <h1 class="workspace-title">Database Example</h1>
-    <input id="inputUsername">
-    <input id="inputText">
+    <label for="inputUsername"><input id="inputUsername"></label>
+    <label for="inputText"><input id="inputText"></label>
     <button id="pushData">Push</button>
     <br>
     <pre id="dbView"></pre>

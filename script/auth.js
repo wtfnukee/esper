@@ -59,7 +59,7 @@ function toggleSignIn() {
     btnLogin.disabled = true;
     if (firebase.auth().currentUser) {
         window.location.href = "workspace.html";
-        } else {
+    } else {
         alert("This account does not exist")
     }
 
@@ -101,3 +101,4 @@ function toggleSignOut(){
 //Add button listeners
 btnLogin.addEventListener('click', toggleSignIn, false);
 btnSignUp.addEventListener('click', handleSignUp, false);
+
