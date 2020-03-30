@@ -8,6 +8,7 @@ const inputText = document.getElementById("inputText");
 
 const user = firebase.auth().currentUser;
 
+firebase.auth().onAuthStateChanged(function(user) {
 if (user) {
     // User is signed in.
      const userId = user.uid;
@@ -37,7 +38,7 @@ if (user) {
     // No user is signed in.
     alert('No user is signed in.');
 }
-
+});
 
 //Add button listeners
 btnPushData.addEventListener('click', pushData, false);
