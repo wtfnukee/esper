@@ -1,11 +1,10 @@
 'use strict';
 
-
 // Get elements
 const btnPushData = document.getElementById("pushData");
 const inputUsername = document.getElementById("inputUsername");
 const inputText = document.getElementById("inputText");
-
+const dbView = document.getElementById("dbView");
 
 function pushData() {
     firebase.firestore().collection("/UserSandbox").add({
@@ -21,12 +20,13 @@ function pushData() {
         });
 }
 
-//Read data
-firebase.firestore().collection("/UserSandbox")
-    .onSnapshot(function(doc) {
-        alert("ЧТЕНИЕ РАБОТАЕТ");
+firebase.firestore().collection('UserSandbox').get()
+    .then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        dbView.innerText = doc.data().value;
     });
-
+});
 
 //Add button listeners
 btnPushData.addEventListener('click', pushData, false);

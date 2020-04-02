@@ -1,14 +1,7 @@
-@font-face{
-    font-family: JetBrainsMono-Regular;
-    src: url(//fonts/JetBrainsMono-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
 body, h1, h2, h3, h4, p, a {
     margin: 0;
     font-size: 100%;
-    font-family: 'JetBrainsMono-Regular', sans-serif;
+    font-family: 'SansSerif', sans-serif;
     font-weight: normal;
     color: black;
 }

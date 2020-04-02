@@ -2,13 +2,16 @@
 <html lang="html">
 <head>
     <title>Auth</title>
+    <link rel="icon" href="images/favicon.ico" type="image/ico">
+
     <style>@import url("style/style.css");</style>
     <style>@import url("style/auth.css");</style>
     <style>@import url("style/medium-button.css");</style>
-    <link rel="icon" href="images/favicon.ico" type="image/ico">
+
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
 </head>
 <body class="body">
 <card class="auth">
@@ -25,6 +28,6 @@
         <button class="medium-button auth-title" id="btnSignUp" type="submit">Sign Up</button>
 </card>
 
-<script src="script/auth.js"></script>
-<script src="script/db.js"></script>
+<script src="script/auth.js" async></script>
+<script src="script/db.js" async></script>
 </body>

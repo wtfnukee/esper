@@ -11,5 +11,16 @@
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "y"
+  },
+  "emulators": {
+    "functions": {
+      "port": "firestore.indexes.json"
+    },
+    "firestore": {
+      "port": "y"
+    },
+    "database": {
+      "port": "y"
+    }
   }
 }
