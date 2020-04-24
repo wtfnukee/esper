@@ -24,7 +24,7 @@ firebase.firestore().collection('UserSandbox').get()
     .then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
-        dbView.innerText = doc.data().value;
+        dbView.innerText = dbView.innerText + doc.data().value;
     });
 });
 

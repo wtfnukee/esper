@@ -16,29 +16,86 @@
     <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
 </head>
-
 <body class="body">
-
+<h1 class="workspace-title">My Site</h1>
 <section id="workspace" class="workspace-main">
-    <h1 class="workspace-title">Database Example</h1>
-    <label for="inputUsername"><input id="inputUsername"></label>
-    <label for="inputText"><input id="inputText"></label>
-    <button id="pushData">Push</button>
-    <br>
-    <label class="switch" id="led">
-        <input type="checkbox">
-        <span class="slider round"></span>
-    </label>
-    <br>
-    <pre id="dbView"></pre>
-    <button class="medium-button auth-title" id="btnLogout" type="submit"><a href="index.html">Logout</a></button>
+    <canvas id="gc" width="400" height="400"></canvas>
+    <script>
+        window.onload=function() {
+            canv=document.getElementById("gc");
+            ctx=canv.getContext("2d");
+            document.addEventListener("keydown",keyPush);
+            setInterval(game,1000/15);
+        }
+        px=py=10;
+        gs=tc=20;
+        ax=ay=15;
+        xv=yv=0;
+        trail=[];
+        tail = 5;
+        function game() {
+            px+=xv;
+            py+=yv;
+            if(px<0) {
+                px= tc-1;
+            }
+            if(px>tc-1) {
+                px= 0;
+            }
+            if(py<0) {
+                py= tc-1;
+            }
+            if(py>tc-1) {
+                py= 0;
+            }
+            ctx.fillStyle="black";
+            ctx.fillRect(0,0,canv.width,canv.height);
+
+            ctx.fillStyle="lime";
+            for(var i=0;i<trail.length;i++) {
+                ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+                if(trail[i].x===px && trail[i].y===py) {
+                    tail = 5;
+                }
+            }
+            trail.push({x:px,y:py});
+            while(trail.length>tail) {
+                trail.shift();
+            }
+
+            if(ax===px && ay===py) {
+                tail++;
+                ax=Math.floor(Math.random()*tc);
+                ay=Math.floor(Math.random()*tc);
+            }
+            ctx.fillStyle="red";
+            ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+        }
+        function keyPush(evt) {
+            switch(evt.keyCode) {
+                case 37:
+                    xv=-1;yv=0;
+                    break;
+                case 38:
+                    xv=0;yv=-1;
+                    break;
+                case 39:
+                    xv=1;yv=0;
+                    break;
+                case 40:
+                    xv=0;yv=1;
+                    break;
+            }
+        }
+    </script>
 </section>
+
+<button class="medium-button auth-title" id="btnLogout" type="submit"><a href="index.html">Logout</a></button>
 
 <footer class="footer">
     <h4 class="footer-author">
         <a href="https://github.com/wtfnukee/esper" class="footer-text">https://github.com/wtfnukee/esper</a>
         <br><a href="https://vk.com/wtfnukee" class="footer-text">https://vk.com/wtfnukee</a>
-        <br><a href="https://vk.com/verviv" class="footer-text">https://vk.com/verviv</a>
     </h4>
 </footer>
 
