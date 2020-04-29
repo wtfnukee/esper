@@ -1,0 +1,26 @@
+.tab-button-group button {
+    background-color: magenta; /* Green background */
+    border: 1px solid darkmagenta; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+    margin: 25px;
+    display: inline-block;
+}
+
+.tab-button-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.tab-button-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.tab-button-group button:hover {
+    background-color: darkorchid;
+}
