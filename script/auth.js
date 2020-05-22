@@ -58,7 +58,7 @@ function toggleSignIn() {
     }
     btnLogin.disabled = true;
     if (firebase.auth().currentUser) {
-        window.location.href = "workspace.html";
+        window.location.href = "workspace.html"; //CC{you_are_curious_i_like_it}
     } else {
         alert("This account does not exist")
     }
